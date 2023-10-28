@@ -5,22 +5,24 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-from . import locators
+from qa_python_sprint_5 import locators
+#
+# class TestRegistration:
+#     def test_registration(self, driver):
 
-class TestRegistration:
-    def test_registration(self, driver):
+driver = webdriver.Chrome()
+driver.get("https://stellarburgers.nomoreparties.site/")
 
-# driver = webdriver.Chrome()
-# driver.get("https://stellarburgers.nomoreparties.site/")
+driver.find_element(*REF_REGISTRATION).click()
 
-    driver.find_element(By.TAG_NAME, *ANCOR_REGISTRATION).click()
+data_name = "Alex"
+gen_data_email = f'Aleksei_Mikhalev{r.randint(100, 900)}@yandex.ru'
+gen_data_password = r.randint(123456, 654321)
 
-    email = f'Aleksei_Mikhalev{r.randint(100, 900)}@yandex.ru'
-
-    driver.find_element(*INPUT_NAME).send_keys("Alex")
-    driver.find_element(*INPUT_EMAIL).send_keys(email)
-    driver.find_element(By.NAME, "Пароль").send_keys("QaPython2")
-    driver.find_element(By.TAG_NAME, "button[text()='Войти']").click()
+driver.find_element(*INPUT_NAME).send_keys(data_name)
+driver.find_element(*INPUT_EMAIL).send_keys(gen_data_email)
+driver.find_element(By.NAME, "Пароль").send_keys("gen_data_password")
+driver.find_element(By.XPATH, "//button[text()='Войти']").click()
 
 
 driver.quit()
