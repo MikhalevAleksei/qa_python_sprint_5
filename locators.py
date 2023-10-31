@@ -18,16 +18,19 @@ class ConstLocators:
     BUTTON_ENTER = (By.XPATH, "//button[text()='Войти']")
 
     # ссылка  Зарегистрироваться
-    REF_REGISTRATION = (By.XPATH, "//*[text()='Зарегистрироваться']")
+    REF_REGISTRATION = By.XPATH, "//a[text()='Зарегистрироваться']"
 
     # ссылка  Восстановить пароль
-    REF_RESTORE_PASSWORD = (By.XPATH, "//*[text()='Восстановить пароль']")
+    REF_RESTORE_PASSWORD = By.XPATH, "//*[text()='Восстановить пароль']"
 
     # вход в личный кабинет
-    PERSONAL_ACCOUNT_ENTER = (By.XPATH, "//*[text()='Личный Кабинет']")
+    PERSONAL_ACCOUNT_ENTER = By.XPATH, "//*[text()='Личный Кабинет']"
 
     # ссылка Войти в форме Регистрация
-    REF_ENTER_FROM_REGISTRATION = (By.XPATH, "//a[text()='Войти']")
+    REF_ENTER_FROM_REGISTRATION = By.XPATH, "//a[text()='Войти']"
 
     # ссылка Войти в через Восстановить пароль
-    ENTER_FROM_PASSWORD_RESTORE = (By.XPATH, "//a[text()='Восстановить пароль']")
+    ENTER_FROM_PASSWORD_RESTORE = (
+        By.XPATH, "//a[text()='Восстановить пароль']")
+
+    BUTTON_REGISTRATION = By.XPATH, "//button[text()='Зарегистрироваться']"

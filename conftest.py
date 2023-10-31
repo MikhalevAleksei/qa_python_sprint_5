@@ -1,6 +1,6 @@
 import pytest
 
-from selenium.webdriver.chrome import webdriver
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
@@ -9,5 +9,7 @@ def driver():
     options = Options()
     options.add_argument('--window-size-1920,1080')
     driver = webdriver.Chrome(options=options)
+    link = "https://stellarburgers.nomoreparties.site"
+    driver.get(link)
     yield driver
     driver.quit()
