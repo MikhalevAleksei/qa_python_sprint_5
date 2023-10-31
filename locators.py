@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class ConstLocators:
+class Locators:
     # Поле ввода Войти в аккаунт
     ENTER_ACCOUNT = By.XPATH, "//*[text()='Войти в аккаунт']"
 
@@ -12,7 +12,7 @@ class ConstLocators:
     INPUT_EMAIL = By.XPATH, "//*[text()='Email']/following-sibling::input"
 
     # вход поле Пароль
-    INPUT_PASSWORD = (By.NAME, "Пароль")
+    INPUT_PASSWORD = By.NAME, "Пароль"
 
     # вход кнопка Войти
     BUTTON_ENTER = (By.XPATH, "//button[text()='Войти']")
@@ -24,13 +24,21 @@ class ConstLocators:
     REF_RESTORE_PASSWORD = By.XPATH, "//*[text()='Восстановить пароль']"
 
     # вход в личный кабинет
-    PERSONAL_ACCOUNT_ENTER = By.XPATH, "//*[text()='Личный Кабинет']"
+    PERSONAL_ACCOUNT_ENTER = By.XPATH, "//p[text()='Личный Кабинет']"
 
     # ссылка Войти в форме Регистрация
     REF_ENTER_FROM_REGISTRATION = By.XPATH, "//a[text()='Войти']"
 
     # ссылка Войти в через Восстановить пароль
-    ENTER_FROM_PASSWORD_RESTORE = (
-        By.XPATH, "//a[text()='Восстановить пароль']")
+    ENTER_FROM_PASSWORD_RESTORE = \
+        By.XPATH, "//a[text()='Восстановить пароль']"
 
     BUTTON_REGISTRATION = By.XPATH, "//button[text()='Зарегистрироваться']"
+
+    TEXT_PROFILE = By.XPATH, "//*[text()='Профиль']"
+
+    TEST_ENTER_MAIN_PAGE = \
+        By.XPATH, "//button[contains(@class,'button_button_size_large')]"
+
+    MSG_ERROR_PASSWORD = \
+        By.XPATH, "//p[text()='Некорректный пароль']"
