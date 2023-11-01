@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
-from gen_data_for_login import GenDataLogin
+from data import GenDataLogin
 
 
 @pytest.fixture(scope='function')

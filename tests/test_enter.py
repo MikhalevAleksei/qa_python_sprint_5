@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
-from gen_data_for_login import gen_data_email, gen_data_password, data_name
+from data import gen_data_email, gen_data_password, data_name
 
 
 class TestEnter:

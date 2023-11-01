@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from gen_data_for_login import gen_data_email, gen_data_password, data_name
+from data import gen_data_email, gen_data_password, data_name
 from locators import Locators
 
 
