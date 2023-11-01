@@ -1,10 +1,8 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
 from data import GenLogin, User
-from urls import Urls
 
 
 class TestEnter:
@@ -75,3 +73,4 @@ class TestEnter:
         assert btn_is.text == 'Оформить заказ'
 
         driver.quit()
+

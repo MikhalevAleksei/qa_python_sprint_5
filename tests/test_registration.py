@@ -38,5 +38,5 @@ class TestRegistration:
     def test_format_fld_email(self, driver, registration):
         assert '@yandex.ru' in GenLogin.gen_email
 
-
         driver.quit()
+

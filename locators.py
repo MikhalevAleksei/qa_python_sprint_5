@@ -44,3 +44,5 @@ class Locators:
         By.XPATH, "//button[contains(@class,'button_button_size_large')]"
 
     MSG_ERROR_PASSWORD = By.XPATH, "//*[contains(@class, 'input__error ')]"
+
+    BTN_EXIT_PESONAL_ACCOUNT = By.XPATH, "//button[text()='Выход']"

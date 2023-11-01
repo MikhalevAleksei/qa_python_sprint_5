@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
-from data import GenLogin, User
+from data import GenLogin
 from urls import Urls
 
 

@@ -1,10 +1,5 @@
 import random as r
 
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-from locators import Locators
-
 
 class GenLogin:
     data_name = "Alex"
