@@ -30,7 +30,7 @@ class Locators:
     BTN_PERSONAL_ACCOUNT = By.XPATH, "//p[text()='Личный Кабинет']"
 
     # ссылка Войти в форме Регистрация
-    REF_ENTER_FROM_REGISTRATION = By.XPATH, "//a[text()='Войти']"
+    REF_ENTER_FROM_SECTION = By.XPATH, "//a[text()='Войти']"
 
     # ссылка Войти в через Восстановить пароль
     ENTER_FROM_PASSWORD_RESTORE = \
