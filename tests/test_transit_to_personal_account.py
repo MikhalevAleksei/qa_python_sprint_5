@@ -8,8 +8,8 @@ from locators import Locators
 class TestTransitPersonalAccount:
     def test_transit_to_account(self, driver):
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-            Locators.ENTER_ACCOUNT))
-        driver.find_element(*Locators.ENTER_ACCOUNT).click()
+            Locators.BTN_ENTER_ACCOUNT))
+        driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
         # WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         #     ConstLocators.REF_REGISTRATION))
         # driver.find_element(*ConstLocators.REF_REGISTRATION).click()
@@ -31,10 +31,10 @@ class TestTransitPersonalAccount:
             *Locators.INPUT_PASSWORD).send_keys(gen_data_password)
         print(gen_data_password)
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-            Locators.BUTTON_ENTER))
-        driver.find_element(*Locators.BUTTON_ENTER).click()
+            Locators.BTN_ENTER))
+        driver.find_element(*Locators.BTN_ENTER).click()
 
-        driver.find_element(*Locators.PERSONAL_ACCOUNT_ENTER).click()
+        driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
         # WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         #     ConstLocators.TEXT_PROFILE))
 

@@ -1,5 +1,10 @@
 import random as r
 
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from locators import Locators
+
 
 class GenLogin:
     data_name = "Alex"
@@ -11,4 +16,5 @@ class GenLogin:
 class User:
     test_name = 'Aleksei'
     test_email = 'Aleksei123@ya.ru'
-    test_password = '123456'
+    test_password = 123456
+

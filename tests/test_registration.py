@@ -8,7 +8,7 @@ from locators import Locators
 class TestRegistration:
     def test_registration(self, driver, registration):
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-            Locators.BUTTON_ENTER))
+            Locators.BTN_ENTER))
         assert '/login' in driver.current_url
 
     def test_len_fld_password(self, driver, registration):

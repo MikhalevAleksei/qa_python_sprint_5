@@ -9,8 +9,8 @@ from locators import Locators
 class TestTransitFromPersonalAccountToConstructor:
     def test_from_account_to_constructor(self, driver):
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-            Locators.ENTER_ACCOUNT))
-        driver.find_element(*Locators.ENTER_ACCOUNT).click()
+            Locators.BTN_ENTER_ACCOUNT))
+        driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
             Locators.REF_REGISTRATION))
         driver.find_element(*Locators.REF_REGISTRATION).click()
@@ -30,10 +30,10 @@ class TestTransitFromPersonalAccountToConstructor:
         driver.find_element(
             *Locators.INPUT_PASSWORD).send_keys(gen_data_password)
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-            Locators.BUTTON_ENTER))
-        driver.find_element(*Locators.BUTTON_ENTER).click()
+            Locators.BTN_ENTER))
+        driver.find_element(*Locators.BTN_ENTER).click()
 
-        driver.find_element(*Locators.PERSONAL_ACCOUNT_ENTER).click()
+        driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
             Locators.TEXT_PROFILE))
         driver.find_element(By.XPATH, "//p[text()='Конструктор']").click()

@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
-from data import GenLogin
+from data import GenLogin, User
 from urls import Urls
 
 
@@ -23,8 +23,8 @@ def driver():
 @pytest.fixture(scope='function')
 def registration(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-        Locators.ENTER_ACCOUNT))
-    driver.find_element(*Locators.ENTER_ACCOUNT).click()
+        Locators.BTN_ENTER_ACCOUNT))
+    driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.REF_REGISTRATION))
     driver.find_element(*Locators.REF_REGISTRATION).click()
@@ -44,17 +44,14 @@ def registration(driver):
 @pytest.fixture(scope='function')
 def enter(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-        Locators.ENTER_ACCOUNT))
-    driver.find_element(*Locators.ENTER_ACCOUNT).click()
-    WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-        Locators.INPUT_EMAIL))
+        Locators.BTN_ENTER))
     driver.find_element(
         *Locators.INPUT_EMAIL).send_keys(GenLogin.gen_email)
     driver.find_element(
         *Locators.INPUT_PASSWORD).send_keys(GenLogin.gen_password)
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-        Locators.BUTTON_ENTER))
-    btn_enter = driver.find_element(*Locators.BUTTON_ENTER).click()
+        Locators.BTN_ENTER))
+    btn_enter = driver.find_element(*Locators.BTN_ENTER).click()
 
     yield btn_enter
     driver.quit()
@@ -63,8 +60,10 @@ def enter(driver):
 @pytest.fixture(scope='function')
 def enter_account(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
-        Locators.ENTER_ACCOUNT))
-    enter_account = driver.find_element(*Locators.ENTER_ACCOUNT).click()
+        Locators.BTN_ENTER_ACCOUNT))
+    enter_account = driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
 
     yield enter_account
     driver.quit()
+
+
