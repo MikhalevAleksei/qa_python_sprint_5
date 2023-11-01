@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from gen_data_for_login import gen_data_password, gen_data_email
+from gen_data_for_login import GenDataLogin
 from locators import Locators
 
 
@@ -20,10 +20,10 @@ class TestRegistration:
     #     fld_name = driver.find_element(*Locators.INPUT_NAME)
     #     assert len(fld_name.send_keys(data_name)) > 0
 
-    # def test_format_fld_email(self, driver):
-    #     fld_forma = driver.find_element(By.NAME, "name").get_attribute("value")
-    #     assert '@ya.ru' in fld_forma
-    #
+    def test_format_fld_email(self, driver, enter_account):
+        fld_forma = driver.find_element(By.NAME, "name").get_attribute("value")
+        assert '@ya.ru' in fld_forma
+
     def test_len_fld_password(self, driver, enter):
         # WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         #     Locators.ENTER_ACCOUNT))
@@ -37,10 +37,10 @@ class TestRegistration:
         # WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         #     Locators.BUTTON_ENTER))
         # driver.find_element(*Locators.BUTTON_ENTER).click()
-        # len_password = driver.find_element(
-        #     *Locators.INPUT_PASSWORD).send_keys(gen_data_password)
-        # assert len(len_password.get_attribute('value')) >= 6
-    #
+        len_password = driver.find_element(
+            *Locators.INPUT_PASSWORD).send_keys(GenDataLogin.gen_data_password)
+        assert len(len_password.get_attribute('value')) >= 6
+
     # def test_err_for_negative_login(self, driver):
     #     driver.find_element(*Locators.REF_REGISTRATION).click()
     #     fld_password = driver.find_element(By.NAME, "Пароль")
