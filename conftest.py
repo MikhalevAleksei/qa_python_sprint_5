@@ -6,7 +6,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
-from data import GenDataLogin
+from data import GenLogin
+from urls import Urls
 
 
 @pytest.fixture(scope='function')
@@ -14,8 +15,7 @@ def driver():
     options = Options()
     options.add_argument('--window-size-1920,1080')
     driver = webdriver.Chrome(options=options)
-    link = "https://stellarburgers.nomoreparties.site"
-    driver.get(link)
+    driver.get(Urls.url_main)
     yield driver
     driver.quit()
 
@@ -30,15 +30,16 @@ def registration(driver):
     driver.find_element(*Locators.REF_REGISTRATION).click()
 
     fld_name = driver.find_element(*Locators.INPUT_NAME)
-    fld_name.send_keys(GenDataLogin.data_name)
+    fld_name.send_keys(GenLogin.data_name)
     fld_email = driver.find_element(*Locators.INPUT_EMAIL)
-    fld_email.send_keys(GenDataLogin.gen_data_email)
+    fld_email.send_keys(GenLogin.gen_email)
     fld_password = driver.find_element(*Locators.INPUT_PASSWORD)
-    fld_password.send_keys(GenDataLogin.gen_data_password)
+    fld_password.send_keys(GenLogin.gen_password)
     btn_registration = driver.find_element(*Locators.BUTTON_REGISTRATION)
 
     yield btn_registration.click()
     driver.quit()
+
 
 @pytest.fixture(scope='function')
 def enter(driver):
@@ -48,9 +49,9 @@ def enter(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.INPUT_EMAIL))
     driver.find_element(
-        *Locators.INPUT_EMAIL).send_keys(GenDataLogin.gen_data_email)
+        *Locators.INPUT_EMAIL).send_keys(GenLogin.gen_email)
     driver.find_element(
-        *Locators.INPUT_PASSWORD).send_keys(GenDataLogin.gen_data_password)
+        *Locators.INPUT_PASSWORD).send_keys(GenLogin.gen_password)
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.BUTTON_ENTER))
     btn_enter = driver.find_element(*Locators.BUTTON_ENTER).click()

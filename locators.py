@@ -40,5 +40,5 @@ class Locators:
     TEST_ENTER_MAIN_PAGE = \
         By.XPATH, "//button[contains(@class,'button_button_size_large')]"
 
-    MSG_ERROR_PASSWORD = \
-        By.XPATH, "//p[text()='Некорректный пароль']"
+    #MSG_ERROR_PASSWORD = By.XPATH, "//p[text()='Некорректный пароль']"
+    MSG_ERROR_PASSWORD = By.XPATH, "//*[contains(@class, 'input__error ')]"
