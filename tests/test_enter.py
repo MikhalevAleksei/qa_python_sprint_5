@@ -73,4 +73,3 @@ class TestEnter:
         assert btn_is.text == 'Оформить заказ'
 
         driver.quit()
-

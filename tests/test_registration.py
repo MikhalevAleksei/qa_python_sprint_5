@@ -39,4 +39,3 @@ class TestRegistration:
         assert '@yandex.ru' in GenLogin.gen_email
 
         driver.quit()
-

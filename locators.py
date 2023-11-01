@@ -45,4 +45,22 @@ class Locators:
 
     MSG_ERROR_PASSWORD = By.XPATH, "//*[contains(@class, 'input__error ')]"
 
-    BTN_EXIT_PESONAL_ACCOUNT = By.XPATH, "//button[text()='Выход']"
+    BTN_EXIT_PERSONAL_ACCOUNT = By.XPATH, "//button[text()='Выход']"
+
+    BTN_TRANSIT_TO_CONSTRUCTOR = By.XPATH, "//p[text()='Конструктор']"
+
+    TXT_CONSTRUCT_BURGERS = By.XPATH, "//*[text()='Соберите бургер']"
+
+    LOGO = By.XPATH, "//*[@id='root']/div/header/nav/div/a"
+
+    BTN_BURGERS = By.XPATH, "//span[text()='Булки']"
+
+    TXT_BURGERS = By.XPATH, "//h2[text()='Булки']"
+
+    BTN_SOUSES = By.XPATH, "//span[text()='Соусы']"
+
+    TXT_SOUSES = By.XPATH, "//h2[text()='Соусы']"
+
+    BTN_STAFFING = By.XPATH, "//span[text()='Соусы']"
+
+    TXT_STAFFING = By.XPATH, "//h2[text()='Соусы']"
