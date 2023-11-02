@@ -15,3 +15,4 @@ class TestTransitToPersonalAccount:
         assert 'account/profile' in driver.current_url
 
         driver.quit()
+

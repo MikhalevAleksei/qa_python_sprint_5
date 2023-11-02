@@ -5,8 +5,8 @@ from locators import Locators
 
 
 class TestTransitFromPersonalAccountToConstructor:
-    def test_transit_from_personal_account_to_constructor(self, driver,
-                                                     registration, enter):
+    def test_transit_from_personal_account_to_constructor(
+            self, driver, registration, enter):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -21,8 +21,8 @@ class TestTransitFromPersonalAccountToConstructor:
 
         assert btn_is.text == 'Соберите бургер'
 
-    def test_transit_from_personal_account_to_logo(self, driver, registration,
-                                                   enter):
+    def test_transit_from_personal_account_to_logo(
+            self, driver, enter_account):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -36,6 +36,4 @@ class TestTransitFromPersonalAccountToConstructor:
         btn_is = driver.find_element(*Locators.TXT_CONSTRUCT_BURGERS)
 
         assert btn_is.text == 'Соберите бургер'
-
         driver.quit()
-

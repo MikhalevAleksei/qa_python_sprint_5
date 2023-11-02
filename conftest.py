@@ -1,7 +1,6 @@
 import pytest
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -12,9 +11,10 @@ from urls import Urls
 
 @pytest.fixture(scope='function')
 def driver():
-    options = Options()
-    options.add_argument('--window-size-1920,1080')
-    driver = webdriver.Chrome(options=options)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--window-size-1920,1080')
+    chrome_options.add_argument('--headless')
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get(Urls.url_main)
     yield driver
     driver.quit()
@@ -35,10 +35,8 @@ def registration(driver):
     fld_email.send_keys(GenLogin.gen_email)
     fld_password = driver.find_element(*Locators.INPUT_PASSWORD)
     fld_password.send_keys(GenLogin.gen_password)
-    btn_registration = driver.find_element(*Locators.BUTTON_REGISTRATION)
-
-    yield btn_registration.click()
-    driver.quit()
+    driver.find_element(*Locators.BUTTON_REGISTRATION).click()
+    yield registration
 
 
 @pytest.fixture(scope='function')
@@ -51,19 +49,13 @@ def enter(driver):
         *Locators.INPUT_PASSWORD).send_keys(GenLogin.gen_password)
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.BTN_ENTER))
-    btn_enter = driver.find_element(*Locators.BTN_ENTER).click()
-
-    yield btn_enter
-    driver.quit()
+    driver.find_element(*Locators.BTN_ENTER).click()
+    yield enter
 
 
 @pytest.fixture(scope='function')
 def enter_account(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.BTN_ENTER_ACCOUNT))
-    enter_account = driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
-
+    driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
     yield enter_account
-    driver.quit()
-
-

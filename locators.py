@@ -11,8 +11,13 @@ class Locators:
     # Поле ввода имени
     INPUT_NAME = By.XPATH, "//*[text()='Имя']/following-sibling::input"
 
+    REGISTRATION_NAME = By.XPATH, "//*[text(" \
+                                    ")='Имя']/following-sibling::input"
+
     # поле ввода email
     INPUT_EMAIL = By.XPATH, "//*[text()='Email']/following-sibling::input"
+
+    REGISTRATION_EMAIL = By.XPATH, "//*[text()='Email']/following-sibling::input"
 
     # вход поле Пароль
     INPUT_PASSWORD = By.NAME, "Пароль"
@@ -51,16 +56,17 @@ class Locators:
 
     TXT_CONSTRUCT_BURGERS = By.XPATH, "//*[text()='Соберите бургер']"
 
-    LOGO = By.XPATH, "//*[@id='root']/div/header/nav/div/a"
+    LOGO = By.XPATH, \
+           "//div[contains(@class, 'AppHeader_header__logo')]/child::a "
 
-    BTN_BURGERS = By.XPATH, "//span[text()='Булки']"
+    BTN_BUL = By.XPATH, "//span[text()='Булки']/parent::div"
 
-    TXT_BURGERS = By.XPATH, "//h2[text()='Булки']"
+    TXT_BUL = By.XPATH, "//h2[text()='Булки']"
 
-    BTN_SOUSES = By.XPATH, "//span[text()='Соусы']"
+    BTN_SOUSES = By.XPATH, "//span[text()='Соусы']/parent::div"
 
     TXT_SOUSES = By.XPATH, "//h2[text()='Соусы']"
 
-    BTN_STAFFING = By.XPATH, "//span[text()='Соусы']"
+    BTN_STAFFING = By.XPATH, "//span[text()='Начинки']/parent::div"
 
-    TXT_STAFFING = By.XPATH, "//h2[text()='Соусы']"
+    TXT_STAFFING = By.XPATH, "//h2[text()='Начинки']"

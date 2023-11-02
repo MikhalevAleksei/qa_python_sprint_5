@@ -2,6 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators import Locators
+from urls import Urls
 
 
 class TestExitFromPersonalAccount:
@@ -17,4 +18,6 @@ class TestExitFromPersonalAccount:
         WebDriverWait(driver, 5).until(
             EC.visibility_of_element_located(Locators.BTN_ENTER))
 
-        assert '/login' in driver.current_url
+        assert Urls.url_login == driver.current_url
+        driver.quit()
+

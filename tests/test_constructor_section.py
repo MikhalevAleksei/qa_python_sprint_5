@@ -11,22 +11,22 @@ class TestConstructorSection:
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
 
         WebDriverWait(driver, 5).until(
-            EC.element_to_be_clickable(
+            EC.visibility_of_element_located(
                 Locators.BTN_TRANSIT_TO_CONSTRUCTOR))
         driver.find_element(*Locators.BTN_TRANSIT_TO_CONSTRUCTOR).click()
 
         WebDriverWait(driver, 5).until(
-            EC.element_to_be_clickable(Locators.BTN_BURGERS))
-        driver.find_element(*Locators.BTN_BURGERS).click()
+            EC.visibility_of_element_located(Locators.BTN_BUL))
 
         WebDriverWait(driver, 5).until(
-            EC.visibility_of_element_located(Locators.TXT_BURGERS))
-        btn_is = driver.find_element(*Locators.TXT_BURGERS)
+            EC.visibility_of_element_located(Locators.TXT_BUL))
+        element = driver.find_element(*Locators.TXT_BUL)
+        driver.execute_script("arguments[0].scrollIntoView();", element)
+        btn_is = driver.find_element(*Locators.TXT_BUL)
 
         assert btn_is.text == 'Булки'
 
-    def test_constructor_section_souses(self, driver, registration,
-                                        enter):
+    def test_constructor_section_souses(self, driver, enter_account):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -46,8 +46,7 @@ class TestConstructorSection:
 
         assert btn_is.text == 'Соусы'
 
-    def test_constructor_section_staffing(self, driver, registration,
-                                          enter):
+    def test_constructor_section_staffing(self, driver, enter_account):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -66,5 +65,4 @@ class TestConstructorSection:
         btn_is = driver.find_element(*Locators.TXT_STAFFING)
 
         assert btn_is.text == 'Начинки'
-
         driver.quit()

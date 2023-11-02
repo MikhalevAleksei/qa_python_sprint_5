@@ -12,7 +12,7 @@ class TestEnter:
         btn_is = driver.find_element(*Locators.BTN_ORDER)
         assert btn_is.text == 'Оформить заказ'
 
-    def test_enter_personal_account(self, driver, registration):
+    def test_enter_personal_account(self, driver, enter_account):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -72,4 +72,7 @@ class TestEnter:
 
         assert btn_is.text == 'Оформить заказ'
 
+
         driver.quit()
+
+
