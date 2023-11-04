@@ -5,7 +5,7 @@ from locators import Locators
 
 
 class TestConstructorSection:
-    def test_constructor_section_burgers(self, driver, registration, enter):
+    def test_constructor_section_burgers(self, driver):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -26,7 +26,7 @@ class TestConstructorSection:
 
         assert btn_is.text == 'Булки'
 
-    def test_constructor_section_souses(self, driver, enter_account):
+    def test_constructor_section_souses(self, driver):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()
@@ -46,7 +46,7 @@ class TestConstructorSection:
 
         assert btn_is.text == 'Соусы'
 
-    def test_constructor_section_staffing(self, driver, enter_account):
+    def test_constructor_section_staffing(self, driver):
         WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable(Locators.BTN_PERSONAL_ACCOUNT))
         driver.find_element(*Locators.BTN_PERSONAL_ACCOUNT).click()

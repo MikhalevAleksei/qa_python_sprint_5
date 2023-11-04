@@ -41,7 +41,7 @@ class Locators:
     ENTER_FROM_PASSWORD_RESTORE = \
         By.XPATH, "//a[text()='Восстановить пароль']"
 
-    BUTTON_REGISTRATION = By.XPATH, "//button[text()='Зарегистрироваться']"
+    BTN_REGISTRATION = By.XPATH, "//button[text()='Зарегистрироваться']"
 
     TEXT_PROFILE = By.XPATH, "//*[text()='Профиль']"
 
@@ -70,3 +70,6 @@ class Locators:
     BTN_STAFFING = By.XPATH, "//span[text()='Начинки']/parent::div"
 
     TXT_STAFFING = By.XPATH, "//h2[text()='Начинки']"
+
+   # VALUE_EMAIL = By.XPATH, "//*[text()='Логин']/following-sibling::input"
+    VALUE_EMAIL = By.NAME, "name"

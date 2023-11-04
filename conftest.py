@@ -35,8 +35,8 @@ def registration(driver):
     fld_email.send_keys(GenLogin.gen_email)
     fld_password = driver.find_element(*Locators.INPUT_PASSWORD)
     fld_password.send_keys(GenLogin.gen_password)
-    driver.find_element(*Locators.BUTTON_REGISTRATION).click()
-    yield registration
+    driver.find_element(*Locators.BTN_REGISTRATION).click()
+    return registration
 
 
 @pytest.fixture(scope='function')
@@ -50,7 +50,7 @@ def enter(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.BTN_ENTER))
     driver.find_element(*Locators.BTN_ENTER).click()
-    yield enter
+    return enter
 
 
 @pytest.fixture(scope='function')
@@ -58,4 +58,4 @@ def enter_account(driver):
     WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
         Locators.BTN_ENTER_ACCOUNT))
     driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
-    yield enter_account
+    return enter_account
