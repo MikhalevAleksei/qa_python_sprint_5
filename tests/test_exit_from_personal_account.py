@@ -19,5 +19,4 @@ class TestExitFromPersonalAccount:
             EC.visibility_of_element_located(Locators.BTN_ENTER))
 
         assert Urls.url_login == driver.current_url
-        driver.quit()
 

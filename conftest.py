@@ -59,3 +59,4 @@ def enter_account(driver):
         Locators.BTN_ENTER_ACCOUNT))
     driver.find_element(*Locators.BTN_ENTER_ACCOUNT).click()
     return enter_account
+

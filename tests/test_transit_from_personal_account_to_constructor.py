@@ -36,4 +36,3 @@ class TestTransitFromPersonalAccountToConstructor:
         btn_is = driver.find_element(*Locators.TXT_CONSTRUCT_BURGERS)
 
         assert btn_is.text == 'Соберите бургер'
-        driver.quit()

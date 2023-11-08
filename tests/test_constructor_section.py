@@ -65,4 +65,3 @@ class TestConstructorSection:
         btn_is = driver.find_element(*Locators.TXT_STAFFING)
 
         assert btn_is.text == 'Начинки'
-        driver.quit()

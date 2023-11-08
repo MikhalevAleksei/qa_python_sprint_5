@@ -67,7 +67,7 @@ class TestRegistration:
         err_msg = driver.find_element(*Locators.MSG_ERROR_PASSWORD)
 
         assert err_msg.text == "Некорректный пароль"
-    #
+
     def test_format_fld_email(self, driver, enter_account):
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
             Locators.BTN_ENTER))
@@ -125,8 +125,6 @@ class TestRegistration:
             Locators.BTN_ENTER))
         driver.find_element(*Locators.BTN_ENTER).click()
         assert len(actual_name) > 0
-
-        driver.quit()
 
 
 

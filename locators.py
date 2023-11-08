@@ -71,5 +71,5 @@ class Locators:
 
     TXT_STAFFING = By.XPATH, "//h2[text()='Начинки']"
 
-   # VALUE_EMAIL = By.XPATH, "//*[text()='Логин']/following-sibling::input"
     VALUE_EMAIL = By.NAME, "name"
+
