@@ -1,2 +1,3 @@
 # qa_python_sprint_5
-tests for site 
+tests for site Stellar Burgers
+
